@@ -1,8 +1,18 @@
-<h1>All Contacts</h1>
+<% count = 0 %>
 <% @contacts.each do |contact| %>
-<h3>First Name: <%= contact.first_name %></h3>
-<h3>Last Name: <%= contact.last_name %></h3>
-<h3>Email: <%= contact.email %></h3>
-<h3>Phone Number: <%= contact.phone_number %></h3>
-<h4><%= link_to "View this contact page", "/contacts/#{contact.id}" %></h4>
+    <% if count == 3 %>
+        <div class="clear_both"></div>
+        <% count = 0 %>
+    <% else %>
+        <% count = count + 1 %>
+    <% end %>
+<div class="col-sm-4 well">
+  <h3>First Name:</h3><h4> <%= contact.first_name %> </h4>
+  <h3>Middle Name:</h3><h4> <%= contact.middle_name %> </h4>  
+  <h3>Last Name:</h3><h4> <%= contact.last_name %> </h4>  
+  <h3>Email:</h3><h4> <%= contact.email %> </h4> 
+  <h3>Phone Number:</h3><h4> <%= contact.country_code %></h4>
+  <h3>Bio:</h3><h4> <%= contact.bio %></h4>
+  <h4><%= link_to "View this contact page", "/contacts/#{contact.id}" %></h4>
+</div>
 <% end %>
