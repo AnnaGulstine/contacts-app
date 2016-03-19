@@ -13,4 +13,12 @@ class Contact < ActiveRecord::Base
       phone_number
     end
   end
+
+  def if_address
+    if address 
+      address
+    else
+      " "
+    end
+  end
 end

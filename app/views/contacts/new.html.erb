@@ -1,30 +1,30 @@
 <h1>Add a new contact.</h1>
-<%= form_tag '/contacts', method: :post do %>
-<div class="form-group">
-  <%= label_tag :first_name %>
-  <%= text_field_tag :first_name %>  
-</div>
-<div class="form-group">
-  <%= label_tag :middle_name %>
-  <%= text_field_tag :middle_name %>  
-</div>
-<div class="form-group">
-  <%= label_tag :last_name %>
-  <%= text_field_tag :last_name %>
-</div>
-<div class="form-group">
-  <%= label_tag :email %>
-  <%= text_field_tag :email %>
-</div>
-<div class="form-group">
-  <%= label_tag :phone_number %>
-  <%= text_field_tag :phone_number %>
-</div>
-<div class="form-group">
-  <%= label_tag :bio %>
-  <%= text_field_tag :bio %>
-</div>
-<div>
-  <%= submit_tag 'Create Contact', class: "btn btn-default" %>
-</div>
+   <%= form_tag '/contacts', method: :post do %>
+   <div class="form-group">
+     <%= label_tag :first_name %>
+     <%= text_field_tag :first_name %>  
+   </div>
+   <div class="form-group">
+     <%= label_tag :middle_name %>
+     <%= text_field_tag :middle_name %>  
+   </div>
+   <div class="form-group">
+     <%= label_tag :last_name %>
+     <%= text_field_tag :last_name %>
+   </div>
+   <div class="form-group">
+     <%= label_tag :email %>
+     <%= text_field_tag :email %>
+   </div>
+   <div class="form-group">
+     <%= label_tag :phone_number %>
+     <%= text_field_tag :phone_number %>
+   </div>
+   <div class="form-group">
+     <%= label_tag :bio %>
+     <%= text_field_tag :bio %>
+   </div>
+   <div>
+     <%= submit_tag 'Create Contact', class: "btn btn-default" %>
+   </div>
 <% end %>

@@ -12,6 +12,7 @@
   <h3>Last Name:</h3><h4> <%= contact.last_name %> </h4>  
   <h3>Email:</h3><h4> <%= contact.email %> </h4> 
   <h3>Phone Number:</h3><h4> <%= contact.country_code %></h4>
+  <h3>Coordinates:</h3><h4> <%= contact.latitude %> <%= contact.longitude %></h4>
   <h3>Bio:</h3><h4> <%= contact.bio %></h4>
   <h4><%= link_to "View this contact page", "/contacts/#{contact.id}" %></h4>
 </div>

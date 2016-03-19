@@ -7,12 +7,15 @@ class ContactsController < ApplicationController
   end
 
   def create
+    coordinates = Geocoder.coordinates(params[:address])
     Contact.create(
       first_name: params[:first_name],
       middle_name: params[:middle_name],
       last_name: params[:last_name],
       email: params[:email],
       phone_number: params[:phone_number],
+      latitude: coordinates[0],
+      longitude: coordinates[1],
       bio: params[:bio]
     )
   end
@@ -42,7 +45,7 @@ class ContactsController < ApplicationController
 
   def destroy
     contact_id = params[:id]
-    @contact = Contact.find_by(id: contact_id) 
-    @contact.delete
+    contact = Contact.find_by(id: contact_id) 
+    contact.delete
   end
 end
