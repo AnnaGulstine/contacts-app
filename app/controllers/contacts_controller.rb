@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
   def index
-    @contacts = Contact.all 
+    @contacts = current_user.contacts
   end
 
   def new
@@ -16,7 +16,8 @@ class ContactsController < ApplicationController
       phone_number: params[:phone_number],
       latitude: coordinates[0],
       longitude: coordinates[1],
-      bio: params[:bio]
+      bio: params[:bio],
+      user_id: current_user.id      
     )
   end
 

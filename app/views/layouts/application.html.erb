@@ -23,6 +23,13 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+     <ul class="nav navbar-nav navbar-right">
+      <% if !current_user %>
+        <li><a href="/users/sign_up">Sign Up</a></li>
+        <li><a href="/users/sign_in">Log In</a></li>
+      <% else %>
+        <li><%= link_to "Log Out", "/users/sign_out", method: :delete %></li>
+      <% end %>
       <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search contacts">
@@ -35,7 +42,14 @@
 
 <div class="container">
 
-<%= yield %>
+  <% flash.each do |name, message| %>
+    <div class="alert alert-<%= name %> alert-dismissible fade in" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</span><span class="sr-only">Close</span></button>
+      <%= message.html_safe %>  
+    </div>
+  <% end %>
+
+  <%= yield %>
 
 </div>
 
